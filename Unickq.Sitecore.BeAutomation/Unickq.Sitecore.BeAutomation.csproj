@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFrameworks>netstandard20</TargetFrameworks>
+    <Version>0.1.0-alfa1</Version>
+    <Product>Unickq.Sitecore.BeAutomation</Product>
+    <Authors>Nick Chursin</Authors>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <FileVersion>0.1.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Unickq.Sitecore.BeAutomation</PackageId>
+    <RootNamespace>Unickq.Sitecore.BeAutomation</RootNamespace>
+    <AssemblyName>Unickq.Sitecore.BeAutomation</AssemblyName>
+    <Description>A small lib for making simple UI tests for Sitecore backend</Description>
+    <PackageIconUrl>https://raw.githubusercontent.com/unickq/Seleniq/master/logo.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/unickq/Unickq.Sitecore.BeAutomation</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/unickq/Unickq.Sitecore.BeAutomation</RepositoryUrl>
+    <PackageTags>sitecore, test automation, ui testing</PackageTags>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.6.5" />
+    <PackageReference Include="Seleniq" Version="0.3.2-beta1" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
