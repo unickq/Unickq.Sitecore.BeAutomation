@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using OpenQA.Selenium;
+using Seleniq.Extensions.Selenium;
 using Unickq.Sitecore.BeAutomation.Utils;
 
 namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tabs.Content
@@ -41,5 +44,15 @@ namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tab
 
             return this;
         }
+    }
+
+    public class ScTreeList : AbstractScControl
+    {
+        public ScTreeList(string panelLabel, string itemLabel) : base(panelLabel, itemLabel, FieldType.TreeList)
+        {
+            ControlElement.JsHighlight(cssColor: "red");
+        }
+
+        public IList<string> TreeListItems => ControlElement.FindElements(By.TagName("div")).GetElemetsText();
     }
 }

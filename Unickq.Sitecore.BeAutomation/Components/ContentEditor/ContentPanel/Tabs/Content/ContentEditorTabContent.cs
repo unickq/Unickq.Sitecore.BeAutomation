@@ -18,9 +18,9 @@ namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tab
         {
         }
 
-        public void xxx()
+        public void PrintElements()
         {
-            foreach (var x in GetElements) Console.WriteLine(x);
+            foreach (var el in GetElements) Console.WriteLine(el);
         }
 
         public TControl GetControl<TControl>(string panelLabel, string controlLabel)
@@ -28,6 +28,7 @@ namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tab
         {
             try
             {
+                Logger.Info($"Looking for {typeof(TControl).Name} with label {controlLabel} in {panelLabel} panel");
                 return (TControl) Activator.CreateInstance(typeof(TControl), panelLabel, controlLabel);
             }
             catch (TargetInvocationException e)

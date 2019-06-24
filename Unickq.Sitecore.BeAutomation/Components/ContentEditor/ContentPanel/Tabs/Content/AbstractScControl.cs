@@ -43,6 +43,10 @@ namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tab
                     elementXpath =
                         $".//div[@class='scEditorFieldLabel' and contains(text(),'{itemLabel}')]/following-sibling::div/input";
                     break;
+                case FieldType.TreeList:
+                    elementXpath =
+                        $".//div[@class='scEditorFieldLabel' and contains(text(),'{itemLabel}')]/following-sibling::div/div[contains(@class,'scTreelistEx')]";
+                    break;
             }
 
             Root.JsHighlight("Green");
@@ -50,11 +54,18 @@ namespace Unickq.Sitecore.BeAutomation.Components.ContentEditor.ContentPanel.Tab
                 message: $"Unable to inialize {type} with label {itemLabel} under {panelLabel} panel");
         }
 
+        public AbstractScControl Focus()
+        {
+            ControlElement.JsFocus();
+            return this;
+        }
+
         public enum FieldType
         {
             CheckBox,
             ComboBox,
-            TextBox
+            TextBox,
+            TreeList
         }
     }
 }
